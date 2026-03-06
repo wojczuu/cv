@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wojciech Czuba - CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #080B0F;
+    --bg-card:   #0D1117;
+    --bg-card2:  #111620;
+    --border:    #1C2535;
+    --border-hl: #1E3A5F;
+    --cyan:      #00CBA8;
+    --cyan-dim:  #00876f;
+    --cyan-glow: rgba(0, 203, 168, 0.08);
+    --amber:     #F0A830;
+    --amber-dim: rgba(240, 168, 48, 0.12);
+    --text-1:    #E2E8F0;
+    --text-2:    #94A3B8;
+    --text-3:    #4A5A72;
+    --white:     #F8FAFC;
+    --page-w:    210mm;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    background: var(--bg);
+    color: var(--text-1);
+    font-family: 'Figtree', sans-serif;
+    font-size: 10pt;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    width: var(--page-w);
+    margin: 0 auto;
+    padding: 14mm 16mm 12mm;
+    background: var(--bg);
+    min-height: 297mm;
+  }
+
+  /* ── HEADER ─────────────────────────────────────────────── */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 16px;
+  }
+
+  .header-left {}
+
+  .name {
+    font-family: 'Syne', sans-serif;
+    font-size: 28pt;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -0.5px;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .name span { color: var(--cyan); }
+
+  .tagline {
+    font-family: 'Figtree', sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    color: var(--text-2);
+    letter-spacing: 0.3px;
+    max-width: 340px;
+    line-height: 1.5;
+  }
+
+  .header-right {
+    text-align: right;
+  }
+
+  .contact-line {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7.5pt;
+    color: var(--text-3);
+    line-height: 2;
+  }
+
+  .contact-line a {
+    color: var(--cyan-dim);
+    text-decoration: none;
+  }
+
+  /* ── COMPETENCIES ────────────────────────────────────────── */
+  .comp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .comp-col {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--cyan);
+    padding: 10px 12px;
+    border-radius: 2px;
+  }
+
+  .comp-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7pt;
+    font-weight: 500;
+    color: var(--cyan);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .comp-item {
+    font-size: 8pt;
+    color: var(--text-2);
+    line-height: 1.9;
+    padding-left: 8px;
+    position: relative;
+  }
+
+  .comp-item::before {
+    content: '-';
+    position: absolute;
+    left: 0;
+    color: var(--text-3);
+    font-size: 7pt;
+  }
+
+  /* ── SECTION HEADING ─────────────────────────────────────── */
+  .section-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 18px 0 10px;
+  }
+
+  .section-heading .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7pt;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--cyan);
+  }
+
+  .section-heading .line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── PROJECT CASE ────────────────────────────────────────── */
+  .project-case {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--cyan);
+    padding: 12px 14px 12px 14px;
+    margin-bottom: 8px;
+    border-radius: 0 2px 2px 0;
+    page-break-inside: avoid;
+  }
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    gap: 12px;
+  }
+
+  .project-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.3;
+  }
+
+  .project-meta {
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .project-company {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7pt;
+    color: var(--cyan-dim);
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .project-year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7pt;
+    color: var(--text-3);
+    display: block;
+  }
+
+  .project-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .project-col {}
+
+  .col-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--text-3);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .col-text {
+    font-size: 7.8pt;
+    color: var(--text-2);
+    line-height: 1.55;
+    font-weight: 300;
+  }
+
+  .outcomes-bar {
+    background: var(--amber-dim);
+    border: 1px solid rgba(240, 168, 48, 0.2);
+    border-radius: 2px;
+    padding: 6px 10px;
+    display: flex;
+    gap: 6px;
+    align-items: flex-start;
+  }
+
+  .outcomes-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--amber);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .outcomes-text {
+    font-size: 7.8pt;
+    color: #D4A840;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
+  /* ── EXPERIENCE ──────────────────────────────────────────── */
+  .exp-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    page-break-inside: avoid;
+  }
+
+  .exp-item:last-child { border-bottom: none; }
+
+  .exp-role {
+    font-family: 'Syne', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 1px;
+  }
+
+  .exp-company {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7pt;
+    color: var(--cyan-dim);
+    margin-bottom: 5px;
+    letter-spacing: 0.3px;
+  }
+
+  .exp-period {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7pt;
+    color: var(--text-3);
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .exp-bullets {
+    list-style: none;
+    padding: 0;
+  }
+
+  .exp-bullets li {
+    font-size: 8pt;
+    color: var(--text-2);
+    line-height: 1.65;
+    padding-left: 12px;
+    position: relative;
+    font-weight: 300;
+  }
+
+  .exp-bullets li::before {
+    content: '›';
+    position: absolute;
+    left: 2px;
+    color: var(--cyan-dim);
+    font-size: 9pt;
+    line-height: 1.4;
+  }
+
+  /* ── EDUCATION ───────────────────────────────────────────── */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .edu-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    border-radius: 2px;
+  }
+
+  .edu-degree {
+    font-family: 'Syne', sans-serif;
+    font-size: 8.5pt;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 2px;
+  }
+
+  .edu-school {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7pt;
+    color: var(--text-2);
+  }
+
+  .edu-year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7pt;
+    color: var(--text-3);
+    margin-top: 2px;
+  }
+
+  /* ── TOOLS ───────────────────────────────────────────────── */
+  .tools-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4px 14px;
+    align-items: baseline;
+  }
+
+  .tool-category {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7pt;
+    font-weight: 500;
+    color: var(--cyan-dim);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .tool-values {
+    font-size: 8pt;
+    color: var(--text-2);
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  /* ── FOOTER ──────────────────────────────────────────────── */
+  .footer {
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 6.5pt;
+    color: var(--text-3);
+    text-align: center;
+    font-style: italic;
+  }
+
+  /* ── PRINT ───────────────────────────────────────────────── */
+  @media print {
+    html, body {
+      background: var(--bg) !important;
+      width: 210mm;
+      margin: 0;
+      padding: 14mm 16mm 12mm;
+    }
+    .project-case, .exp-item, .edu-item { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ───────── HEADER ───────── -->
+<header class="header">
+  <div class="header-left">
+    <div class="name">Wojciech <span>Czuba</span></div>
+    <div class="tagline">Full-Stack Product Leader with a founder's mindset<br>I own the product, the tech decisions, and the business outcome.</div>
+  </div>
+  <div class="header-right">
+    <div class="contact-line">Warsaw, Poland</div>
+    <div class="contact-line"><a href="https://www.linkedin.com/in/wojciech-czuba/">in/wojciech-czuba</a></div>
+    <div class="contact-line">Polish (native) · English (C1)</div>
+  </div>
+</header>
+
+<!-- ───────── COMPETENCIES ───────── -->
+<div class="comp-grid">
+  <div class="comp-col">
+    <div class="comp-title">🎯 &nbsp;Product</div>
+    <div class="comp-item">Product strategy &amp; vision</div>
+    <div class="comp-item">Discovery &amp; user research</div>
+    <div class="comp-item">OKRs / North Star metrics</div>
+    <div class="comp-item">Roadmapping &amp; prioritisation</div>
+    <div class="comp-item">MVP definition &amp; scoping</div>
+    <div class="comp-item">UX thinking &amp; prototyping</div>
+    <div class="comp-item">Agile / Scrum delivery</div>
+    <div class="comp-item">Stakeholder management</div>
+  </div>
+  <div class="comp-col">
+    <div class="comp-title">⚙️ &nbsp;Technology</div>
+    <div class="comp-item">Solution architecture (product level)</div>
+    <div class="comp-item">API design &amp; integrations</div>
+    <div class="comp-item">Tech trade-off decisions</div>
+    <div class="comp-item">Build / Buy / Partner</div>
+    <div class="comp-item">KYC, 3DS, OCR, SDK</div>
+    <div class="comp-item">Supabase, Vercel, GitHub</div>
+    <div class="comp-item">AI-powered tools (vibe coding)</div>
+    <div class="comp-item">Software house management</div>
+  </div>
+  <div class="comp-col">
+    <div class="comp-title">💼 &nbsp;Business &amp; Venture</div>
+    <div class="comp-item">Venture building (0→1)</div>
+    <div class="comp-item">Business case &amp; P&amp;L thinking</div>
+    <div class="comp-item">Go-to-market strategy</div>
+    <div class="comp-item">BD support &amp; client acquisition</div>
+    <div class="comp-item">Legal &amp; compliance framing</div>
+    <div class="comp-item">Budget ownership</div>
+    <div class="comp-item">Board &amp; investor reporting</div>
+    <div class="comp-item">Multi-country expansion</div>
+  </div>
+</div>
+
+<!-- ───────── PORTFOLIO ───────── -->
+<div class="section-heading">
+  <span class="label">Product Portfolio</span>
+  <div class="line"></div>
+</div>
+
+<!-- VASBOX -->
+<div class="project-case">
+  <div class="project-header">
+    <div class="project-title">VASBOX - Value-Added Services Platform</div>
+    <div class="project-meta">
+      <span class="project-company">The Heart × Mastercard</span>
+      <span class="project-year">2021 – present</span>
+    </div>
+  </div>
+  <div class="project-body">
+    <div class="project-col">
+      <div class="col-label">Product</div>
+      <div class="col-text">Co-created the venture from day 1. Led full discovery-to-delivery cycle. Designed integration methods (API / links / PINs / redirect) enabling banks and telcos to distribute VAS at scale across Europe.</div>
+    </div>
+    <div class="project-col">
+      <div class="col-label">Technology</div>
+      <div class="col-text">Full platform ownership across two software house transitions. Managed a team of 10+ engineers. Led all architecture and integration decisions throughout multiple product generations.</div>
+    </div>
+    <div class="project-col">
+      <div class="col-label">Business</div>
+      <div class="col-text">Supported BD process and contributed to client acquisition. Led implementation and post-launch support for enterprise clients including PKO BP, mBank, Pekao SA, Velo Bank, Millennium, UniCredit, Orange, Polkomtel, and ZEN.com. Supported campaigns in 13 European countries.</div>
+    </div>
+  </div>
+  <div class="outcomes-bar">
+    <span class="outcomes-label">📈 Results</span>
+    <span class="outcomes-text">5M+ end customers reached · 130K+ VASes issued · €2.2M+ in benefit value delivered · 10% acquisition conversion with VAS vs 3% without · Benefit cost reduced by 40% · Active in 13 European markets</span>
+  </div>
+</div>
+
+<!-- Invoice Gateway -->
+<div class="project-case">
+  <div class="project-header">
+    <div class="project-title">Invoice Gateway - Supply Chain Finance Platform</div>
+    <div class="project-meta">
+      <span class="project-company">The Heart (Fintech venture)</span>
+      <span class="project-year">2022</span>
+    </div>
+  </div>
+  <div class="project-body">
+    <div class="project-col">
+      <div class="col-label">Product</div>
+      <div class="col-text">Led full product scope from zero: problem framing, value proposition design, functional scoping across MVP phases. Dynamic discounting platform connecting suppliers, buyers, and investors. Applied Agile/Scrum from the ground up.</div>
+    </div>
+    <div class="project-col">
+      <div class="col-label">Technology</div>
+      <div class="col-text">Selected and onboarded the software house. Actively participated in all key technology decisions: OCR invoice processing, payment flows, security model. Managed the development team end-to-end.</div>
+    </div>
+    <div class="project-col">
+      <div class="col-label">Business</div>
+      <div class="col-text">Owned the budget. Participated in building the legal framework (agreements, KNF correspondence, regulatory foundations). Reported directly to the board. Contributed to investor and partner materials.</div>
+    </div>
+  </div>
+  <div class="outcomes-bar">
+    <span class="outcomes-label">📈 Results</span>
+    <span class="outcomes-text">End-to-end delivery from a single market insight to working MVP - covering product, tech, legal, and budget. Comprehensive ownership on this project was the direct basis for accelerated promotion from PO to Senior PO after just 6 months at The Heart.</span>
+  </div>
+</div>
+
+<!-- PolCard Pay -->
+<div class="project-case">
+  <div class="project-header">
+    <div class="project-title">PolCard Pay - Cash2Card Mobile App</div>
+    <div class="project-meta">
+      <span class="project-company">Fiserv (PolCard) via The Heart</span>
+      <span class="project-year">2023</span>
+    </div>
+  </div>
+  <div class="project-body">
+    <div class="project-col">
+      <div class="col-label">Product</div>
+      <div class="col-text">Ran discovery workshops to define and scope requirements for a mobile + web app enabling cash deposits at partner terminals (Żabka, Empik). Managed all stakeholders across client, engineering, and compliance teams.</div>
+    </div>
+    <div class="project-col">
+      <div class="col-label">Technology</div>
+      <div class="col-text">Integrated complex KYC and 3DS systems. Adapted KYC solution to project-specific needs. Produced full technical documentation for SIG and TPRM audits. Supported AppStore and Google Play publication.</div>
+    </div>
+    <div class="project-col">
+      <div class="col-label">Business</div>
+      <div class="col-text">Full delivery accountability. Ensured data compliance. Managed the relationship between three organisations: Fiserv, The Heart, and Digital Gateways.</div>
+    </div>
+  </div>
+  <div class="outcomes-bar">
+    <span class="outcomes-label">📈 Results</span>
+    <span class="outcomes-text">Mobile + web app delivered end-to-end for one of Poland's largest payment processors. KYC + 3DS integrated in compliance-heavy context. Published on AppStore and Google Play. Passed SIG and TPRM audits.</span>
+  </div>
+</div>
+
+<!-- Athloyal -->
+<div class="project-case">
+  <div class="project-header">
+    <div class="project-title">Athloyal - Healthy Loyalty SDK</div>
+    <div class="project-meta">
+      <span class="project-company">The Heart (PoC for Żabka)</span>
+      <span class="project-year">2023</span>
+    </div>
+  </div>
+  <div class="project-body">
+    <div class="project-col">
+      <div class="col-label">Product</div>
+      <div class="col-text">Defined product vision and PoC scope. Led discovery and GTM strategy. Created sales materials. Managed stakeholders at Żabka's innovation team. Piloted as "Żabie Kroki" - step challenges with rewards.</div>
+    </div>
+    <div class="project-col">
+      <div class="col-label">Technology</div>
+      <div class="col-text">Full ownership of mobile app development using Flutter and Supabase - experimental, cutting-edge choices at the time. Handled legal aspects and App Store / Play Store publication within a tight PoC budget.</div>
+    </div>
+    <div class="project-col">
+      <div class="col-label">Business</div>
+      <div class="col-text">Supported BD and partner acquisition. Managed PoC budget. Proposed and validated business model for SDK licensing to retailers and financial institutions.</div>
+    </div>
+  </div>
+  <div class="outcomes-bar">
+    <span class="outcomes-label">📈 Results</span>
+    <span class="outcomes-text">Piloted with Żappka (Żabka) · 25% conversion · +3 app interactions/week per engaged user · Viral word-of-mouth confirmed · Flutter + Supabase validated as production-ready for mobile PoC</span>
+  </div>
+</div>
+
+<!-- flatte -->
+<div class="project-case">
+  <div class="project-header">
+    <div class="project-title">flatte - PropTech Rental Management Platform</div>
+    <div class="project-meta">
+      <span class="project-company">The Heart × Develia</span>
+      <span class="project-year">2022 – 2023</span>
+    </div>
+  </div>
+  <div class="project-body">
+    <div class="project-col">
+      <div class="col-label">Product</div>
+      <div class="col-text">Took over a project in crisis from a previous PO. Re-scoped the functional roadmap to align with changing business environment. Implemented Scrum standards. Improved UX across investor portal, tenant app, and operator platform.</div>
+    </div>
+    <div class="project-col">
+      <div class="col-label">Technology</div>
+      <div class="col-text">Managed a cross-functional dev team of 10+ people. Stabilised delivery process. Oversaw integrations with KYC (Digital Gateways), credit scoring (AIS Gateway), VASBOX, and Tpay.</div>
+    </div>
+    <div class="project-col">
+      <div class="col-label">Business</div>
+      <div class="col-text">Tight budget management. Stakeholder alignment between The Heart and Develia (one of Poland's largest residential developers). Supported GTM process and creation of training materials.</div>
+    </div>
+  </div>
+  <div class="outcomes-bar">
+    <span class="outcomes-label">📈 Results</span>
+    <span class="outcomes-text">Rescued a failing project · Stabilised 10+ person cross-functional team · Investor portal + tenant app + operator platform delivered · Product live with paying clients</span>
+  </div>
+</div>
+
+<!-- Acton Plus -->
+<div class="project-case">
+  <div class="project-header">
+    <div class="project-title">Surf4Tax / Acton Plus - Fintech Platform for SME Lending</div>
+    <div class="project-meta">
+      <span class="project-company">Acton Plus (formerly Surf4Tax)</span>
+      <span class="project-year">2018 – 2021</span>
+    </div>
+  </div>
+  <div class="project-body">
+    <div class="project-col">
+      <div class="col-label">Product</div>
+      <div class="col-text">Designed product logic, UX flows, and processes for all platform modules from scratch: client-facing loan application flow, accountant portal, intermediary/broker portal, and internal processing dashboard. Coordinated with risk department on credit scoring logic.</div>
+    </div>
+    <div class="project-col">
+      <div class="col-label">Technology</div>
+      <div class="col-text">Managed outsourced development team. Defined technical requirements and integration points with banking and leasing partners. Created product specifications and process documentation.</div>
+    </div>
+    <div class="project-col">
+      <div class="col-label">Business</div>
+      <div class="col-text">Represented Surf4Tax at Let's Fintech - an independent startup competition in Poland - where we pitched the accounting platform and its pre-approval engine. Collaborated with management and key investors. Maintained partner relationships with banks, leasing companies, and factoring providers.</div>
+    </div>
+  </div>
+  <div class="outcomes-bar">
+    <span class="outcomes-label">📈 Results</span>
+    <span class="outcomes-text">Evolved from an accounting workflow tool into a multi-module lending platform with automated pre-approval engine (based on clients' financial data) · Competed at Let's Fintech - Poland's leading startup competition · After departure: platform became the foundation for .firm (firm.pl), now a full-service SME bank powered by UniCredit</span>
+  </div>
+</div>
+
+<!-- Vibecode -->
+<div class="project-case">
+  <div class="project-header">
+    <div class="project-title">Vibecode - AI-Powered Product Building</div>
+    <div class="project-meta">
+      <span class="project-company">Independent / Personal</span>
+      <span class="project-year">2024 – present</span>
+    </div>
+  </div>
+  <div class="project-body">
+    <div class="project-col">
+      <div class="col-label">Product</div>
+      <div class="col-text">Independently defined, designed, and shipped products end-to-end: restaurant B2B order management system, marketplace ordering app (Wolt-style for bazaars), web scraping discount aggregator.</div>
+    </div>
+    <div class="project-col">
+      <div class="col-label">Technology</div>
+      <div class="col-text">Full stack: Claude Code · Cursor · Lovable.ai · Supabase (DB + auth + edge functions) · Vercel · Firecrawl · Figma · GitHub. No traditional dev team involved.</div>
+    </div>
+    <div class="project-col">
+      <div class="col-label">Business</div>
+      <div class="col-text">Validated product ideas end-to-end without engineering resources. Demonstrates ability to de-risk and prototype faster than a traditional team - key capability for venture building.</div>
+    </div>
+  </div>
+  <div class="outcomes-bar">
+    <span class="outcomes-label">📈 Results</span>
+    <span class="outcomes-text">3 functional products shipped solo · Full stack from DB to deployment with zero dev team · Validated vibe coding as a serious product-building methodology - not just a toy</span>
+  </div>
+</div>
+
+<!-- ───────── EXPERIENCE ───────── -->
+<div class="section-heading">
+  <span class="label">Work Experience</span>
+  <div class="line"></div>
+</div>
+
+<div class="exp-item">
+  <div>
+    <div class="exp-role">Senior Product Owner / Product Manager</div>
+    <div class="exp-company">The Heart (Venture Builder) · Warsaw · Joined as PO → promoted to Senior PO after 6 months</div>
+    <ul class="exp-bullets">
+      <li>Built and led 5 digital products and ventures from 0 to 1 across fintech, VAS, proptech, and healthtech.</li>
+      <li>Full product × tech × business ownership on each venture - from discovery to post-launch support.</li>
+      <li>Delivered to major enterprise clients: PKO BP, mBank, Pekao SA, Velo Bank, Mastercard, Fiserv, Develia, Żabka.</li>
+      <li>Managed software house relationships including two full vendor transitions (VASBOX).</li>
+      <li>Participated in 10+ unboxing and PoC projects across construction/proptech, fintech, medtech, VAS, and e-commerce.</li>
+    </ul>
+  </div>
+  <div class="exp-period">2021 – present</div>
+</div>
+
+<div class="exp-item">
+  <div>
+    <div class="exp-role">Director of Innovation</div>
+    <div class="exp-company">Acton Plus (formerly Surf4Tax) · Warsaw</div>
+    <ul class="exp-bullets">
+      <li>Built and managed the digital loan application and processing platform from scratch.</li>
+      <li>Competed at Let's Fintech - an independent startup competition - representing the accounting pre-approval platform.</li>
+      <li>Collaborated with risk department on new micro-business lending product and credit scoring model.</li>
+      <li>Managed outsourced development and reported directly to board and key investors.</li>
+    </ul>
+  </div>
+  <div class="exp-period">2018 – 2021</div>
+</div>
+
+<div class="exp-item">
+  <div>
+    <div class="exp-role">Founder / Operations Manager</div>
+    <div class="exp-company">Own Business - Uber Polska</div>
+    <ul class="exp-bullets">
+      <li>Founded and managed a fleet operations company (sp. z o.o.) partnering with Uber.</li>
+      <li>Managed driver scheduling, fleet financing negotiations, and full P&amp;L for the operation.</li>
+    </ul>
+  </div>
+  <div class="exp-period">2015 – 2017</div>
+</div>
+
+<!-- ───────── EDUCATION ───────── -->
+<div class="section-heading">
+  <span class="label">Education</span>
+  <div class="line"></div>
+</div>
+
+<div class="edu-grid">
+  <div class="edu-item">
+    <div class="edu-degree">MSc - Management in Virtual Environments</div>
+    <div class="edu-school">Kozminski University (ALK), Warsaw</div>
+    <div class="edu-year">2018 – 2020</div>
+  </div>
+  <div class="edu-item">
+    <div class="edu-degree">BSc - International Economic Relations</div>
+    <div class="edu-school">SGH Warsaw School of Economics</div>
+    <div class="edu-year">2015 – 2018</div>
+  </div>
+</div>
+
+<!-- ───────── TOOLS ───────── -->
+<div class="section-heading">
+  <span class="label">Tools &amp; Context</span>
+  <div class="line"></div>
+</div>
+
+<div class="tools-grid">
+  <div class="tool-category">Product</div>
+  <div class="tool-values">Agile/Scrum · Jira · Notion · Figma · Miro · roadmapping · OKRs · user stories · PRD</div>
+  <div class="tool-category">Tech stack</div>
+  <div class="tool-values">Claude Code · Cursor · Lovable.ai · Supabase · Vercel · Firecrawl · GitHub · Flutter</div>
+  <div class="tool-category">Integrations</div>
+  <div class="tool-values">KYC/eID · 3DS · OCR · SDK · API design · payment gateways · loyalty platforms</div>
+  <div class="tool-category">Domains</div>
+  <div class="tool-values">Fintech · Value-Added Services · PropTech · HealthTech · Marketplace · AI tooling</div>
+</div>
+
+<!-- ───────── FOOTER ───────── -->
+<div class="footer">
+  I consent to the processing of my personal data included in this document for the purposes of recruitment, in accordance with the GDPR (EU) 2016/679.
+</div>
+
+</body>
+</html>
