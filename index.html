@@ -435,6 +435,79 @@
     font-style: italic;
   }
 
+
+  /* ── RESPONSIVE / MOBILE ─────────────────────────────────── */
+  @media (max-width: 700px) {
+    body {
+      width: 100%;
+      padding: 16px 16px 20px;
+    }
+
+    /* Header stacks vertically */
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .header-right { text-align: left; }
+
+    /* Name smaller */
+    .name { font-size: 22pt; }
+
+    /* Competency grid: 1 column */
+    .comp-grid {
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+
+    /* Project body: 1 column */
+    .project-body {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    /* Each col gets a subtle separator */
+    .project-col + .project-col {
+      padding-top: 6px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Outcomes bar wraps better */
+    .outcomes-bar {
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    /* Experience grid stacks */
+    .exp-item {
+      grid-template-columns: 1fr;
+    }
+    .exp-period {
+      text-align: left;
+      margin-top: -4px;
+      margin-bottom: 6px;
+    }
+
+    /* Education grid: 1 column */
+    .edu-grid {
+      grid-template-columns: 1fr;
+    }
+
+    /* Tools grid: tighter */
+    .tools-grid {
+      grid-template-columns: auto 1fr;
+      gap: 3px 10px;
+    }
+
+    /* Toggle button repositioned */
+    #theme-toggle {
+      top: 10px;
+      right: 10px;
+      font-size: 10px;
+      padding: 4px 10px;
+    }
+  }
+
   /* ── PRINT ───────────────────────────────────────────────── */
   @media print {
     html, body {
