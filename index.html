@@ -527,7 +527,7 @@
     </div>
     <div class="project-col">
       <div class="col-label">Business</div>
-      <div class="col-text">Supported BD process and contributed to client acquisition. Led implementation and post-launch support for enterprise clients including PKO BP, mBank, Pekao SA, Velo Bank, Millennium, UniCredit, Orange, Polkomtel, and ZEN.com. Supported campaigns in 13 European countries.</div>
+      <div class="col-text">Supported BD process and contributed to client acquisition. Led implementation and post-launch support for enterprise clients. Notable deployments: <strong>Łowca Okazji</strong> — integrated directly into VeloBank's <strong>Velo Korzyści</strong> programme; part of mBank's <strong>mOkazje</strong> platform. Also active with Pekao SA, Millennium, UniCredit, Orange, Polkomtel, and ZEN.com across 13 European markets.</div>
     </div>
   </div>
   <div class="outcomes-bar">
@@ -800,16 +800,39 @@
 
 
 <script>
+  function getPreferredTheme() {
+    const saved = localStorage.getItem('theme');
+    if (saved) return saved;
+    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  }
+
+  function applyTheme(theme) {
+    const btn = document.getElementById('theme-toggle');
+    if (theme === 'light') {
+      document.documentElement.classList.add('light');
+      if (btn) btn.innerHTML = '☽ dark';
+    } else {
+      document.documentElement.classList.remove('light');
+      if (btn) btn.innerHTML = '☀ light';
+    }
+  }
+
   function toggleTheme() {
     const isLight = document.documentElement.classList.toggle('light');
+    const theme = isLight ? 'light' : 'dark';
     document.getElementById('theme-toggle').innerHTML = isLight ? '☽ dark' : '☀ light';
-    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    localStorage.setItem('theme', theme);
   }
-  // Restore preference
-  if (localStorage.getItem('theme') === 'light') {
-    document.documentElement.classList.add('light');
-    document.getElementById('theme-toggle').innerHTML = '☽ dark';
-  }
+
+  // Apply on load
+  applyTheme(getPreferredTheme());
+
+  // React to system changes (if no manual override saved)
+  window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', e => {
+    if (!localStorage.getItem('theme')) {
+      applyTheme(e.matches ? 'light' : 'dark');
+    }
+  });
 </script>
 </body>
 </html>
