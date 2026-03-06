@@ -26,6 +26,46 @@
     --page-w:    210mm;
   }
 
+
+  html.light {
+    --bg:        #FFFFFF;
+    --bg-card:   #F8FAFC;
+    --bg-card2:  #F1F5F9;
+    --border:    #E2E8F0;
+    --border-hl: #BFDBFE;
+    --cyan:      #0D6E5A;
+    --cyan-dim:  #1A6B57;
+    --amber:     #92600A;
+    --amber-dim: rgba(240, 168, 48, 0.10);
+    --text-1:    #0F172A;
+    --text-2:    #334155;
+    --text-3:    #94A3B8;
+    --white:     #0F172A;
+  }
+
+  /* ── TOGGLE ─────────────────────────────────────────────── */
+  #theme-toggle {
+    position: fixed;
+    top: 16px;
+    right: 20px;
+    z-index: 999;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-2);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: all 0.15s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  #theme-toggle:hover { border-color: var(--cyan); color: var(--cyan); }
+  @media print { #theme-toggle { display: none; } }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   html {
@@ -409,6 +449,8 @@
 </head>
 <body>
 
+<button id="theme-toggle" onclick="toggleTheme()">☀ light</button>
+
 <!-- ───────── HEADER ───────── -->
 <header class="header">
   <div class="header-left">
@@ -756,5 +798,18 @@
   I consent to the processing of my personal data included in this document for the purposes of recruitment, in accordance with the GDPR (EU) 2016/679.
 </div>
 
+
+<script>
+  function toggleTheme() {
+    const isLight = document.documentElement.classList.toggle('light');
+    document.getElementById('theme-toggle').innerHTML = isLight ? '☽ dark' : '☀ light';
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  }
+  // Restore preference
+  if (localStorage.getItem('theme') === 'light') {
+    document.documentElement.classList.add('light');
+    document.getElementById('theme-toggle').innerHTML = '☽ dark';
+  }
+</script>
 </body>
 </html>
