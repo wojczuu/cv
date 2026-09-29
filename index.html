@@ -135,50 +135,6 @@
     text-decoration: none;
   }
 
-  /* ── COMPETENCIES ────────────────────────────────────────── */
-  .comp-grid {
-    display: grid;
-    grid-template-columns: 0.85fr 1.3fr 0.85fr;
-    gap: 8px;
-    margin-bottom: 16px;
-  }
-
-  .comp-col {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-top: 2px solid var(--cyan);
-    padding: 10px 12px;
-    border-radius: 2px;
-  }
-
-  .comp-title {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 7pt;
-    font-weight: 500;
-    color: var(--cyan);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-    padding-bottom: 5px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .comp-item {
-    font-size: 8pt;
-    color: var(--text-2);
-    line-height: 1.9;
-    padding-left: 8px;
-    position: relative;
-  }
-
-  .comp-item::before {
-    content: '-';
-    position: absolute;
-    left: 0;
-    color: var(--text-3);
-    font-size: 7pt;
-  }
-
   /* ── STATS ───────────────────────────────────────────────── */
   .stats {
     display: grid;
@@ -613,11 +569,6 @@
     /* Name smaller */
     .name { font-size: 22pt; }
 
-    /* Competency grid: 1 column */
-    .comp-grid {
-      grid-template-columns: 1fr;
-      gap: 6px;
-    }
 
     /* Project body: 1 column */
     .project-body {
@@ -880,36 +831,6 @@
   <div class="outcomes-bar">
     <span class="outcomes-label">📈 Results</span>
     <span class="outcomes-text">Regulated-industry requirements handled solo: access control, audit, GDPR erasure + restore drill, RLS data isolation · UI standards enforced by machines, not by memory · adoption waves finished only when a&nbsp;grep showed zero legacy occurrences left in scope</span>
-  </div>
-</div>
-
-<!-- ───────── COMPETENCIES ───────── -->
-<div class="section-heading">
-  <span class="label">Core Competencies</span>
-  <div class="line"></div>
-</div>
-
-<div class="comp-grid">
-  <div class="comp-col">
-    <div class="comp-title">🎯  Product</div>
-    <div class="comp-item">Product strategy &amp; vision</div>
-    <div class="comp-item">Discovery &amp; user research</div>
-    <div class="comp-item">MVP definition &amp; scoping</div>
-    <div class="comp-item">UX thinking &amp; prototyping</div>
-  </div>
-  <div class="comp-col">
-    <div class="comp-title">⚙️  Technology &amp; AI</div>
-    <div class="comp-item">Building products with AI agents</div>
-    <div class="comp-item">Own framework for agent-run delivery</div>
-    <div class="comp-item">Custom agents, skills, hooks, MCP servers</div>
-    <div class="comp-item">Solution architecture, API design &amp; integrations</div>
-  </div>
-  <div class="comp-col">
-    <div class="comp-title">💼  Business &amp; Venture</div>
-    <div class="comp-item">Venture building from zero</div>
-    <div class="comp-item">Business case &amp; P&amp;L thinking</div>
-    <div class="comp-item">Go-to-market strategy</div>
-    <div class="comp-item">Budget ownership</div>
   </div>
 </div>
 
